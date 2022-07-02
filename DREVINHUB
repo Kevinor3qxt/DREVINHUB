@@ -251,6 +251,15 @@ MainSection:NewButton("AntiStomp", "Click K", function()
 end)
 
 end)
+MainSection:NewToggle("Superhuman(in progress)", "faster walkspeed and higher jump", function(state)
+    if state then
+        game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 120
+        game.Players.LocalPlayer.Character.Humanoid.JumpPower = 120
+    else
+        game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 16
+        game.Players.LocalPlayer.Character.Humanoid.JumpPower = 50
+    end
+end)
 --other
 local Other = Window:NewTab("Other")
 local OtherSection = Other:NewSection("Other")
