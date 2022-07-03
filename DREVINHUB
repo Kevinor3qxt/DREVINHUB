@@ -4,6 +4,9 @@ local Window = Library.CreateLib("DREVIN HUB", "Ocean")
 --main
 local Main = Window:NewTab("Main")
 local MainSection = Main:NewSection("Aimlocks")
+MainSection:NewKeybind("v to open n close", "click v to open and close", Enum.KeyCode.V, function()
+	Library:ToggleUI()
+end)
 MainSection:NewButton("GreenDot", "click q on player for lock", function()
     _G.KEY = "q"
 		_G.PART = "HumanoidRootPart"
@@ -265,7 +268,7 @@ local Other = Window:NewTab("Other")
 local OtherSection = Other:NewSection("Other")
 OtherSection:NewButton("Cframe", "MOVE MAIN GUI A LITTLE", function()
     local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
-local Window = Library.CreateLib("Speed", "DarkTheme")
+local Window = Library.CreateLib("DREVIN HUB CFRAME", "DarkTheme")
 
 local speed = Window:NewTab("Speed")
 local rs = speed:NewSection("CFrame Speed")
