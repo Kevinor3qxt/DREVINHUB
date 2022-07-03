@@ -247,10 +247,10 @@ Aiming.FOVSides = 25
 Aiming.HitChance = 110
 Aiming.ShowFOV = false
 end)
-Section:NewButton("CLICK FOR HWID", "THANKS", function()
+local MainSection = Main:NewSection("Useful")
+MainSection:NewButton("CLICK FOR HWID", "THANKS", function()
     setclipboard(game:GetService("RbxAnalyticsService"):GetClientId())
 end)
-local MainSection = Main:NewSection("Useful")
 MainSection:NewButton("Admin Fly", "X to fly", function()
     loadstring(game:HttpGet('https://raw.githubusercontent.com/22kristina/swag/main/admin_fly'))()
 end)
