@@ -1,5 +1,5 @@
 local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
-local Window = Library.CreateLib("DREVIN HUB", "Sentinel")
+local Window = Library.CreateLib("DREVIN HUB", "Synapse")
 
 --main
 local Main = Window:NewTab("Main")
@@ -725,10 +725,29 @@ OtherSection:NewButton("Anim pack", "Anim pack for dh", function()
 		end)
 	end)
 end)
+--animations
+local Animations = Window:NewTab("Animations")
+local AnimationsSection = Animations:NewSection("Animations")
+AnimationsSection:NewButton("Pro Animation", "Gives pro animation", function()
+    while true do
+    wait(1)
+    for i, player in ipairs(game.Players:GetChildren()) do
+    local Animate = game.Players.LocalPlayer.Character.Animate
+Animate.idle.Animation1.AnimationId = "http://www.roblox.com/asset/?id=782841498"
+Animate.idle.Animation2.AnimationId = "http://www.roblox.com/asset/?id=782841498"
+Animate.walk.WalkAnim.AnimationId = "http://www.roblox.com/asset/?id=616168032"
+Animate.run.RunAnim.AnimationId = "http://www.roblox.com/asset/?id=616163682"
+Animate.jump.JumpAnim.AnimationId = "http://www.roblox.com/asset/?id=1083218792"
+Animate.climb.ClimbAnim.AnimationId = "http://www.roblox.com/asset/?id=1083439238"
+Animate.fall.FallAnim.AnimationId = "http://www.roblox.com/asset/?id=707829716"
+game.Players.LocalPlayer.Character.Humanoid.Jump = false
+    end
+end
+end)
 --credits
 local Credits = Window:NewTab("Credits")
 local CreditsSection = Credits:NewSection("Credits")
-CreditsSection:NewButton("THANKS DRACO FOR SCRIPTS DracoTV#0001", "TY", function()
+CreditsSection:NewButton("THANKS DRACO FOR SOME SCRIPTS", "DracoTV#0001", function()
     print("Clicked")
 end)
 CreditsSection:NewButton("AND ME KEVIN THE CREATOR CHECK DESC", "DM FOR ISSUES 3qxt9919", function()
