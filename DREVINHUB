@@ -359,7 +359,7 @@ end
 end)
 start()
 end)
-Section:NewButton("Noclip Click L", "L for noclip", function()
+MainSection:NewButton("Noclip Click L", "L for noclip", function()
     noclip = false
 game:GetService('RunService').Stepped:connect(function()
 if noclip then
