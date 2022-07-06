@@ -366,16 +366,18 @@ MainSection:NewButton("Admin Fly", "X to fly", function()
     loadstring(game:HttpGet('https://raw.githubusercontent.com/22kristina/swag/main/admin_fly'))()
 end)
 MainSection:NewButton("AntiStomp", "Click K", function()
-    game.Players.LocalPlayer:GetMouse().KeyDown:Connect(function(KeyPressed)
- if KeyPressed == "k" then
-	for L_170_forvar0, L_171_forvar1 in pairs(game.Players.LocalPlayer.Character:GetDescendants()) do
-		if L_171_forvar1:IsA("BasePart") then
-			L_171_forvar1:Destroy()
-		end
-	end
-	end
-end)
+game.RunService.RenderStepped:Connect(function()
+pcall(function()
+if game.Players.LocalPlayer.Character.BodyEffects['K.O'].Value == true then
 
+for i,v in pairs(game.Players.LocalPlayer.Character:GetChildren()) do
+    if v:IsA('MeshPart') or  v:IsA('Accessory') then
+        v:Destroy()
+    end
+end
+end
+end)
+end)
 end)
 MainSection:NewToggle("Superhuman(in progress)", "faster walkspeed and higher jump", function(state)
     if state then
