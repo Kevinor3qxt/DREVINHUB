@@ -869,6 +869,152 @@ chatFrame.ChatBarParentFrame.Position = chatFrame.ChatChannelParentFrame.Positio
 
   	end    
 })
+local Teleports = Window:MakeTab({
+	Name = "Teleports",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+local Section = Teleports:AddSection({
+	Name = "Teleports"
+})
+Teleports:AddButton({
+	Name = "Uphillz",
+	Callback = function()
+      		local pl = game.Players.LocalPlayer.Character.HumanoidRootPart
+local location = CFrame.new(480, 48, -622)
+local humanoid = game.Players.LocalPlayer.Character.Humanoid
+humanoid:ChangeState(Enum.HumanoidStateType.Jumping)
+wait(0.1)
+pl.CFrame = location
+  	end    
+})
+Teleports:AddButton({
+	Name = "Taco",
+	Callback = function()
+      		local pl = game.Players.LocalPlayer.Character.HumanoidRootPart
+local location = CFrame.new(564, 51, -480)
+local humanoid = game.Players.LocalPlayer.Character.Humanoid
+humanoid:ChangeState(Enum.HumanoidStateType.Jumping)
+wait(0.1)
+pl.CFrame = location
+  	end    
+})
+Teleports:AddButton({
+	Name = "Uphillz food store",
+	Callback = function()
+      		local pl = game.Players.LocalPlayer.Character.HumanoidRootPart
+local location = CFrame.new(301, 49, -621)
+local humanoid = game.Players.LocalPlayer.Character.Humanoid
+humanoid:ChangeState(Enum.HumanoidStateType.Jumping)
+wait(0.1)
+pl.CFrame = location
+  	end    
+})
+Teleports:AddButton({
+	Name = "Gym",
+	Callback = function()
+      		local pl = game.Players.LocalPlayer.Character.HumanoidRootPart
+local location = CFrame.new(-73, 22, -622)
+local humanoid = game.Players.LocalPlayer.Character.Humanoid
+humanoid:ChangeState(Enum.HumanoidStateType.Jumping)
+wait(0.1)
+pl.CFrame = location
+
+  	end    
+})
+Teleports:AddButton({
+	Name = "Hood Kicks",
+	Callback = function()
+      		local pl = game.Players.LocalPlayer.Character.HumanoidRootPart
+local location = CFrame.new(-205, 21, -415)
+local humanoid = game.Players.LocalPlayer.Character.Humanoid
+humanoid:ChangeState(Enum.HumanoidStateType.Jumping)
+wait(0.1)
+pl.CFrame = location
+
+  	end    
+})
+Teleports:AddButton({
+	Name = "bank",
+	Callback = function()
+      		local pl = game.Players.LocalPlayer.Character.HumanoidRootPart
+local location = CFrame.new(-373, 21, -294)
+local humanoid = game.Players.LocalPlayer.Character.Humanoid
+humanoid:ChangeState(Enum.HumanoidStateType.Jumping)
+wait(0.1)
+pl.CFrame = location
+  	end    
+})
+Teleports:AddButton({
+	Name = "Police Station",
+	Callback = function()
+      		local pl = game.Players.LocalPlayer.Character.HumanoidRootPart
+local location = CFrame.new(-248, 21, -116)
+local humanoid = game.Players.LocalPlayer.Character.Humanoid
+humanoid:ChangeState(Enum.HumanoidStateType.Jumping)
+wait(0.1)
+pl.CFrame = location
+
+  	end    
+})
+Teleports:AddButton({
+	Name = "Downhill",
+	Callback = function()
+      		local pl = game.Players.LocalPlayer.Character.HumanoidRootPart
+local location = CFrame.new(-581, 8, -737)
+local humanoid = game.Players.LocalPlayer.Character.Humanoid
+humanoid:ChangeState(Enum.HumanoidStateType.Jumping)
+wait(0.1)
+pl.CFrame = location
+
+  	end    
+})
+Teleports:AddButton({
+	Name = "Db",
+	Callback = function()
+      		local pl = game.Players.LocalPlayer.Character.HumanoidRootPart
+local location = CFrame.new(-1042, 21, -268)
+local humanoid = game.Players.LocalPlayer.Character.Humanoid
+humanoid:ChangeState(Enum.HumanoidStateType.Jumping)
+wait(0.1)
+pl.CFrame = location
+  	end    
+})
+Teleports:AddButton({
+	Name = "Rev",
+	Callback = function()
+      		local pl = game.Players.LocalPlayer.Character.HumanoidRootPart
+local location = CFrame.new(-641, 21, -128)
+local humanoid = game.Players.LocalPlayer.Character.Humanoid
+humanoid:ChangeState(Enum.HumanoidStateType.Jumping)
+wait(0.1)
+pl.CFrame = location
+
+  	end    
+})
+Teleports:AddButton({
+	Name = "Casino",
+	Callback = function()
+      		local pl = game.Players.LocalPlayer.Character.HumanoidRootPart
+local location = CFrame.new(-997, 21, -165)
+local humanoid = game.Players.LocalPlayer.Character.Humanoid
+humanoid:ChangeState(Enum.HumanoidStateType.Jumping)
+wait(0.1)
+pl.CFrame = location
+  	end    
+})
+Teleports:AddButton({
+	Name = "Grave",
+	Callback = function()
+      		local pl = game.Players.LocalPlayer.Character.HumanoidRootPart
+local location = CFrame.new(168, 21, -7)
+local humanoid = game.Players.LocalPlayer.Character.Humanoid
+humanoid:ChangeState(Enum.HumanoidStateType.Jumping)
+wait(0.1)
+pl.CFrame = location
+  	end    
+})
+
 local Credits = Window:MakeTab({
 	Name = "Credits",
 	Icon = "rbxassetid://4483345998",
