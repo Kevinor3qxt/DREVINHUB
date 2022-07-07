@@ -15,12 +15,6 @@ local Section = Main:AddSection({
 	Name = "Main"
 })
 Main:AddButton({
-	Name = "God v3 Execute while in bubble",
-	Callback = function()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/cypherdh/GodMode-V3/main/script"))()
-  	end    
-})
-Main:AddButton({
 	Name = "Fly (click x)",
 	Callback = function()
       		local plr = game.Players.LocalPlayer
