@@ -130,6 +130,19 @@ start()
   	end    
 })
 Main:AddButton({
+	Name = "No slowdown",
+	Callback = function()
+      		local mt = getrawmetatable(game)
+local backup
+backup = hookfunction(mt.__newindex, newcclosure(function(self, key, value)
+if key == "WalkSpeed" and value < 16 then
+value = 16
+end
+return backup(self, key, value)
+end))
+  	end    
+})
+Main:AddButton({
 	Name = "AntiStomp",
 	Callback = function()
       		pcall(function()
