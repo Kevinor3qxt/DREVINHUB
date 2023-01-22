@@ -1,7 +1,7 @@
 local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
-local Window = OrionLib:MakeWindow({Name = "Drevin hub", HidePremium = true, SaveConfig = true, IntroText = "Drevin Hub", ConfigFolder = "DREVINHUBConfig"})
+local Window = OrionLib:MakeWindow({Name = "SKIDDED.LUA", HidePremium = true, SaveConfig = true, IntroText = "SKID MORE SONS", ConfigFolder = "DREVINHUBConfig"})
 OrionLib:MakeNotification({
-	Name = "Welcome to drevin hub",
+	Name = "Welcome skids THANKS FOR BUYING",
 	Content = "ENJOY",
 	Image = "rbxassetid://4483345998",
 	Time = 5
@@ -13,6 +13,30 @@ local Main = Window:MakeTab({
 })
 local Section = Main:AddSection({
 	Name = "Main"
+})
+Main:AddButton({
+	Name = "Custom ESP",
+	Callback = function()
+      		 local Players = game:GetService("Players")
+local RunService = game:GetService("RunService")
+local Highlight = Instance.new("Highlight")
+Highlight.Name = "Highlight"
+function ApplyToCurrentPlayers()
+    for i,player in pairs(Players:GetChildren()) do 
+        repeat wait() until player.Character
+        if not player.Character:FindFirstChild("HumanoidRootPart"):FindFirstChild("Highlight") then
+            local HighlightClone = Highlight:Clone()
+            HighlightClone.Adornee = player.Character
+            HighlightClone.Parent = player.Character:FindFirstChild("HumanoidRootPart")
+            HighlightClone.DepthMode = Enum.HighlightDepthMode.AlwaysOnTop
+            HighlightClone.Name = "Highlight"
+        end
+    end
+end    
+RunService.Heartbeat:Connect(function()
+    ApplyToCurrentPlayers()
+end)
+  	end    
 })
 Main:AddButton({
 	Name = "Fly (click x)",
@@ -937,6 +961,153 @@ Other:AddButton({
   	end    
 })
 Other:AddButton({
+	Name = "HOOD MODDED BETTER",
+	Callback = function()
+      		 local Settings = { AimLock = { Enabled = true, Aimlockkey = "q", Prediction = 0.130340, Aimpart = 'HumanoidRootPart', Notifications = true }, Settings = { Thickness = 3.5, Transparency = 1, Color = Color3.fromRGB(106, 13, 173), FOV = true } } local CurrentCamera = game:GetService("Workspace").CurrentCamera local Inset = game:GetService("GuiService"):GetGuiInset().Y local RunService = game:GetService("RunService") local Mouse = game.Players.LocalPlayer:GetMouse() local LocalPlayer = game.Players.LocalPlayer local Line = Drawing.new("Line") local Circle = Drawing.new("Circle") local Plr = game.Players.LocalPlayer Mouse.KeyDown:Connect(function(KeyPressed) if KeyPressed == (Settings.AimLock.Aimlockkey) then if Settings.AimLock.Enabled == true then Settings.AimLock.Enabled = false if Settings.AimLock.Notifications == true then Plr = FindClosestPlayer() game.StarterGui:SetCore("SendNotification", { Title = "p", Text = "Unlocked" }) end else Plr = FindClosestPlayer() Settings.AimLock.Enabled = true if Settings.AimLock.Notifications == true then game.StarterGui:SetCore("SendNotification", { Title = "p", Text = "Locked On : " .. tostring(Plr.Character.Humanoid.DisplayName) }) end end end end) function FindClosestPlayer() local ClosestDistance, ClosestPlayer = math.huge, nil; for _, Player in next, game:GetService("Players"):GetPlayers() do if Player ~= LocalPlayer then local Character = Player.Character if Character and Character.Humanoid.Health > 1 then local Position, IsVisibleOnViewPort = CurrentCamera:WorldToViewportPoint(Character.HumanoidRootPart .Position) if IsVisibleOnViewPort then local Distance = (Vector2.new(Mouse.X, Mouse.Y) - Vector2.new(Position.X, Position.Y)).Magnitude if Distance < ClosestDistance then ClosestPlayer = Player ClosestDistance = Distance end end end end end return ClosestPlayer, ClosestDistance end RunService.Heartbeat:connect(function() if Settings.AimLock.Enabled == true then local Vector = CurrentCamera:WorldToViewportPoint(Plr.Character[Settings.AimLock.Aimpart].Position + (Plr.Character[Settings.AimLock.Aimpart].Velocity * Settings.AimLock.Prediction)) Line.Color = Settings.Settings.Color Line.Transparency = Settings.Settings .Transparency Line.Thickness = Settings.Settings .Thickness Line.From = Vector2.new(Mouse.X, Mouse.Y + Inset) Line.To = Vector2.new(Vector.X, Vector.Y) Line.Visible = true Circle.Position = Vector2.new(Mouse.X, Mouse.Y + Inset) Circle.Visible = Settings.Settings.FOV Circle.Thickness = 1.5 Circle.Thickness = 2 Circle.Radius = 60 Circle.Color = Settings.Settings.Color elseif Settings.AimLock.FOV == true then Circle.Visible = true else Circle.Visible = false Line.Visible = false end end) local mt = getrawmetatable(game) local old = mt.__namecall setreadonly(mt, false) mt.__namecall = newcclosure(function(...) local args = {...} if Settings.AimLock.Enabled and getnamecallmethod() == "FireServer" and args[2] == "MousePos" then args[3] = Plr.Character[Settings.AimLock.Aimpart].Position + (Plr.Character[Settings.AimLock.Aimpart].Velocity * Settings.AimLock.Prediction) return old(unpack(args)) end return old(...) end)
+  	end    
+})
+Other:AddButton({
+	Name = "HOOD CUSTOMS",
+	Callback = function()
+      		 -- could also just do : game:GetService("Players").LocalPlayer.UserId = 2887631667
+
+rconsoleprint("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n  _____________________________________\n< This script was cracked by Tyris#0001 >\n  -------------------------------------\n         \\   ^__^ \n          \\  (oo)\\_______\n             (__)\\       )\\/\\\n                 ||----w |\n                 ||     ||\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n")
+wait(2)
+rconsoleprint("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n  _______________________\n")
+rconsoleprint("< ")
+rconsoleprint("@@RED@@")
+rconsoleprint(" Intercepting traffic... ")
+rconsoleprint("@@WHITE@@")
+rconsoleprint(" >\n")
+rconsoleprint("  -----------------------\n         \\   ^__^ \n          \\  (oo)\\_______\n             (__)\\       )\\/\\\n                 ||----w |\n                 ||     ||\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n")
+wait(2)
+local old;
+old = hookfunction(game.HttpGet, function(a,b,...)
+
+    if b == "https://raw.githubusercontent.com/Nosssa/NossLock/main/XSTUsersWhitelisted" then
+        rconsoleprint("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n")
+        rconsoleprint(" ________________________________________ \n")
+        rconsoleprint("< ")
+        rconsoleprint("@@GREEN@@")
+        rconsoleprint("    Moo! Moo! Shitty Whitelist Patched! ")
+        rconsoleprint("@@WHITE@@")
+        rconsoleprint(" >\n")
+        rconsoleprint(" ----------------------------------------\n")
+        rconsoleprint("         \\    ^__^ \n")
+        rconsoleprint("          \\   (oo)\\_______\n")
+        rconsoleprint("              (__)\       )\\/\\\n")
+        rconsoleprint("                  ||----w |\n")
+        rconsoleprint("                  ||     ||\n")
+        rconsoleprint("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n")
+        
+        return '_G.SilentVIP = {game:GetService("Players").LocalPlayer.UserId}'
+    end
+    
+    return old(a,b,...) 
+end)  
+
+
+--// UPDATED: OCTOBER, 30 2022.
+ 
+--// Created By Nosssa & Atman Supports mostly, all hood games!
+ 
+ 
+getgenv().ToggleKey =  (  "q"  )  -- [ Toggle On And Off | Stop asking HORRIBLE questions! ]
+ 
+getgenv().Prediction =  (  .18  )   -- [ Lower Prediction: Lower Ping | Higher Prediction: Higher Ping | If you ask me "what pred is best" I will actually bite you ]
+ 
+getgenv().FOV =  (  250  )   -- [ Increases Or Decreases FOV Radius ]
+ 
+ 
+getgenv().Streaming_Mode = false -- [ On "true", it removes all evidences that point to silent aim automatically. ]
+ 
+ 
+getgenv().FOV_Visible = true -- [ True or False, same for below ]
+getgenv().TargetAim_Visible = true -- [ Shows The Dot Or Disables It ]
+ 
+ 
+getgenv().AntiAimResolver = false -- [ True or False | Bypasses anti-lock, you must rejoin for this change to take effect / apply. ]
+getgenv().IgnoreWalls = false -- [ True or False | TURN THIS ON FOR "HOOD MODDED" IT WILL FIX THE STUPID NOT TOGGLING ISSUES ]
+getgenv().FIXCrossHair = true -- [ Doesn't have any functional usage anymore, issue has been resolved. ]
+ 
+ 
+getgenv().DontShootMyFriends = false -- [ True or False | If this is on "true", when you toggle on to your friends it won't work ]
+getgenv().DontShootThesePeople = {  -- [ List Of Who Not To Target like this. "Quotations with their name and then a comma afterwards for each line"; ]
+ 
+    "Player1";
+    "Player2";
+    "Noob3";
+    "Roblox";
+    "You can go on and on forever";
+ 
+};
+ 
+ 
+--// These contain basic; "true or false" options. Spell everything right and don't make typos. Thanks and enjoy.
+ 
+ 
+task.wait(1) --// Render_Safety_Yield;
+ 
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Nosssa/NossLock/main/ElQueTienePoder", true))();
+
+
+  	end    
+})
+Other:AddButton({
+	Name = "Resolver 2 not laggy but non universal",
+	Callback = function()
+      		-- // aiming version!
+local CPlayer = Aiming.Selected
+local hrp = CPlayer.Character.HumanoidRootPart
+                hrp.Velocity = Vector3.new(hrp.Velocity.X, 0, hrp.Velocity.Y, hrp.Velocity.Z)    
+                hrp.AssemblyLinearVelocity = Vector3.new(hrp.Velocity.X, 0, hrp.Velocity.Y, hrp.Velocity.Z)
+  	end    
+})
+Other:AddButton({
+	Name = "Resolver (kinda laggy)",
+	Callback = function()
+      		 getgenv().VelocityChanger = true
+getgenv().Velocity = Vector3.new(200,0,200)
+
+
+--// main scapt | realkscapter... omg
+local Players     = game:GetService("Players")
+local RunService  = game:GetService("RunService")
+
+local LocalPlayer = Players.LocalPlayer
+local Character   = LocalPlayer.Character
+local RootPart    = Character:FindFirstChild("HumanoidRootPart")
+
+local Heartbeat, RStepped, Stepped = RunService.Heartbeat, RunService.RenderStepped, RunService.Stepped
+
+LocalPlayer.CharacterAdded:Connect(function(NewCharacter)
+   Character = NewCharacter
+end)
+
+local RVelocity, YVelocity = nil, 0.1
+
+while true do
+   if VelocityChanger then
+       --// this a dumb check asnilsadsa
+       if (not RootPart) or (not RootPart.Parent) or (not RootPart.Parent.Parent) then
+           warn("weird ahh died")
+           RootPart = Character:FindFirstChild("HumanoidRootPart")
+       else
+           RVelocity = RootPart.Velocity
+   
+           RootPart.Velocity = type(Velocity) == "vector" and Velocity or Velocity(RVelocity)
+       
+           RStepped:wait()
+       
+           RootPart.Velocity = RVelocity
+       end
+   end
+   
+   Heartbeat:wait()
+end
+  	end    
+})
+Other:AddButton({
 	Name = "Chatspy",
 	Callback = function()
       		 --SCRIPT NOT MADE BY ME I JUST NEEDED A LOADSTRING FOR IT
@@ -1011,13 +1182,131 @@ chatFrame.ChatBarParentFrame.Position = chatFrame.ChatChannelParentFrame.Positio
 
   	end    
 })
+Other:AddButton({
+	Name = "AIMVIEWER (i to enabled) (t to aim view)",
+	Callback = function()
+      		 
+_G.enable = false
+_G.color = Color3.fromRGB(255,0,0)
+_G.toggle_keybind = "i" -- enable tracer and disable
+_G.swith_nigga = 't' -- press t and u will see a noti on the user ur tracer is on 
+_G.method = "MousePos" --had a stroke sotkraakdakdakdkadkadkakdakdakdkdakdakdkadkadka
+
+if game.PlaceId == 2788229376 then
+    _G.method = "MousePos"
+end
+
+
+
+
+---------------------------------------------------------------
+local rs = game:GetService("RunService")
+local localPlayer = game.Players.LocalPlayer
+local mouse = localPlayer:GetMouse()
+local target;
+
+
+
+function getgun()
+    for i,v in pairs(target.Character:GetChildren()) do
+        if v and (v:FindFirstChild('Default') or v:FindFirstChild('Handle') )then
+            return v
+        end
+    end
+end
+
+function sendnotifi(message)
+
+
+    game.StarterGui:SetCore("SendNotification", {
+        Title = '';
+        Text = message;
+        Duration = "1";
+    })
+
+    end
+
+
+function get_closet()
+    local a = math.huge
+    local b;
+
+
+
+    for i, v in pairs(game.Players:GetPlayers()) do
+        if v ~= localPlayer and v.Character and v.Character:FindFirstChild("Head") and  v.Character:FindFirstChild("HumanoidRootPart")  then
+            local c = game.Workspace.CurrentCamera:WorldToViewportPoint(v.Character.PrimaryPart.Position)
+            local d = (Vector2.new(mouse.X, mouse.Y) - Vector2.new(c.X, c.Y)).Magnitude
+
+            if a > d then
+                b = v
+                a = d
+            end
+        end
+    end
+
+    return b
+end
+
+--- 
+mouse.KeyDown:Connect(function(z)
+    if z == _G.toggle_keybind then
+        if _G.enable == false then
+            _G.enable = true
+            sendnotifi("enabled")
+        elseif _G.enable == true then
+            _G.enable = false 
+            sendnotifi("disabled")
+        end
+    end
+end)
+
+mouse.KeyDown:Connect(function(z)
+    if z == _G.swith_nigga then
+        target = get_closet()
+        sendnotifi("targeting: "..tostring(target.Name))
+    end
+end)
+---
+
+-- minified it 
+local a=Instance.new("Beam")a.Segments=1;a.Width0=0.2;a.Width1=0.2;a.Color=ColorSequence.new(_G.color)a.FaceCamera=true;local b=Instance.new("Attachment")local c=Instance.new("Attachment")a.Attachment0=b;a.Attachment1=c;a.Parent=workspace.Terrain;b.Parent=workspace.Terrain;c.Parent=workspace.Terrain
+
+task.spawn(function()
+    rs.RenderStepped:Connect(function()
+ 
+    local character = localPlayer.Character
+        if not character then
+        a.Enabled = false
+        return
+    end
+
+
+ 
+
+
+
+    if _G.enable  and getgun() and target.Character:FindFirstChild("BodyEffects") and target.Character:FindFirstChild("Head")  then
+        a.Enabled = true
+        b.Position =  target.Character:FindFirstChild("Head").Position
+        c.Position = target.Character.BodyEffects[_G.method].Value ---edit this if some random ass game got some weird ass other name :palingface
+    else
+        a.Enabled = false
+    end
+
+    end)
+end)
+
+
+  	end    
+})
 local Teleports = Window:MakeTab({
 	Name = "Teleports",
 	Icon = "rbxassetid://4483345998",
 	PremiumOnly = false
 })
 local Section = Teleports:AddSection({
-	Name = "Teleports"
+	Name = "Teleports (Only NORMAL DH)"
 })
 Teleports:AddButton({
 	Name = "Uphillz",
@@ -1180,12 +1469,6 @@ Credits:AddButton({
 	Name = "Me 3qxt#9919 Dm for issues",
 	Callback = function()
       		print("3qxt#9919")
-  	end    
-})
-Credits:AddButton({
-	Name = "Draco For Some Scripts Discord account banned rn!",
-	Callback = function()
-      		print("Banned :/")
   	end    
 })
 Credits:AddButton({
