@@ -961,10 +961,187 @@ Other:AddButton({
   	end    
 })
 Other:AddButton({
+	Name = "Desync tps you around on other ppls screen",
+	Callback = function()
+      		 getgenv().Desync = true
+
+
+
+
+
+for _, v in pairs(game.Players.LocalPlayer.Character:GetChildren()) do
+    if v:IsA("Script") and v.Name ~= "Health" and v.Name ~= "Sound" and v:FindFirstChild("LocalScript") then
+        v:Destroy()
+    end
+end
+
+
+game.Players.LocalPlayer.CharacterAdded:Connect(function(char)
+    repeat
+        wait()
+    until game.Players.LocalPlayer.Character
+    char.ChildAdded:Connect(function(child)
+        if child:IsA("Script") then 
+            wait(0.25)
+            if child:FindFirstChild("LocalScript") then
+                child.LocalScript:FireServer()
+            end
+        end
+    end)
+end)
+
+
+
+
+
+
+
+
+
+
+
+
+
+game.RunService.Heartbeat:Connect(function()
+    if Desync then
+        local CurrentVelocity = game.Players.LocalPlayer.Character.HumanoidRootPart.Velocity
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame * CFrame.Angles(0,math.rad(0),0)
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame * CFrame.Angles(0,math.rad(0.01),0)
+        game.Players.LocalPlayer.Character.HumanoidRootPart.Velocity = Vector3.new(3000, 3000 ,3000)
+        game.RunService.RenderStepped:Wait()
+        game.Players.LocalPlayer.Character.HumanoidRootPart.Velocity = CurrentVelocity
+    end
+end)
+
+wait(0.1)
+getgenv().Desync = false
+wait(0.1)
+getgenv().Desync1 = true
+
+game.RunService.Heartbeat:Connect(function()
+    if getgenv().Desync1 then
+        local CurrentVelocity = game.Players.LocalPlayer.Character.HumanoidRootPart.Velocity
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame * CFrame.Angles(0,math.rad(0),0)
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame * CFrame.Angles(0,math.rad(0.01),0)
+        game.Players.LocalPlayer.Character.HumanoidRootPart.AssemblyLinearVelocity = Vector3.new(math.random(3000),math.random(3000),math.random(3000))
+        game.RunService.RenderStepped:Wait()
+        game.Players.LocalPlayer.Character.HumanoidRootPart.Velocity = CurrentVelocity
+    end
+end)
+
+wait(0.5)
+
+game.RunService.Heartbeat:Connect(function()
+    if Desync then
+        local CurrentVelocity = game.Players.LocalPlayer.Character.HumanoidRootPart.Velocity
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame * CFrame.Angles(0,math.rad(0),0)
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame * CFrame.Angles(0,math.rad(0.01),0)
+        game.Players.LocalPlayer.Character.HumanoidRootPart.Velocity = Vector3.new(3000, 3000 ,3000)
+        game.RunService.RenderStepped:Wait()
+        game.Players.LocalPlayer.Character.HumanoidRootPart.Velocity = CurrentVelocity
+    end
+end)
+
+wait(0.1)
+getgenv().Desync = false
+wait(0.1)
+getgenv().Desync1 = true
+
+game.RunService.Heartbeat:Connect(function()
+    if getgenv().Desync1 then
+        local CurrentVelocity = game.Players.LocalPlayer.Character.HumanoidRootPart.Velocity
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame * CFrame.Angles(0,math.rad(0),0)
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame * CFrame.Angles(0,math.rad(0.01),0)
+        game.Players.LocalPlayer.Character.HumanoidRootPart.AssemblyLinearVelocity = Vector3.new(math.random(3000),math.random(3000),math.random(3000))
+        game.RunService.RenderStepped:Wait()
+        game.Players.LocalPlayer.Character.HumanoidRootPart.Velocity = CurrentVelocity
+    end
+end)
+  	end    
+})
+Other:AddButton({
+	Name = "Vingui ANTILOCK KEY (C)",
+	Callback = function()
+      		 --KEY IS C
+
+getgenv().tog = false
+getgenv().key = "c"
+getgenv().X = 0
+getgenv().Y = 100
+getgenv().Z = 0
+
+game:GetService("RunService").Heartbeat:Connect(function()
+        if getgenv().tog then
+                local vel = game.Players.LocalPlayer.Character.HumanoidRootPart.Velocity
+                game.Players.LocalPlayer.Character.HumanoidRootPart.Velocity = Vector3.new(getgenv().X, getgenv().Y, getgenv().Z)
+                game:GetService("RunService").RenderStepped:Wait()
+                game.Players.LocalPlayer.Character.HumanoidRootPart.Velocity = vel
+        end
+end)
+
+game:GetService("Players").LocalPlayer:GetMouse().KeyDown:Connect(function(keyPressed)
+        if keyPressed == string.lower(getgenv().key) then
+                pcall(function()
+                        if getgenv().tog == false then
+                                getgenv().tog = true
+                                game.StarterGui:SetCore("SendNotification", {
+                                        Title = "CUAGHT GGS!",
+                                        Text = "AA Enabled" })
+                        elseif getgenv().tog == true then
+                                getgenv().tog = false
+                                game.StarterGui:SetCore("SendNotification", {
+                                        Title = "UNCUAGHT GGS!",
+                                        Text = "AA Disabled" })
+                        end
+                end)
+        end
+end)
+hookfunction(game.Players.LocalPlayer.IsInGroup, function() return true end)
+ 
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Nosssa/NossLock/main/VinGUI"))()
+  	end    
+})
+Other:AddButton({
 	Name = "HOOD MODDED BETTER",
 	Callback = function()
       		 local Settings = { AimLock = { Enabled = true, Aimlockkey = "q", Prediction = 0.130340, Aimpart = 'HumanoidRootPart', Notifications = true }, Settings = { Thickness = 3.5, Transparency = 1, Color = Color3.fromRGB(106, 13, 173), FOV = true } } local CurrentCamera = game:GetService("Workspace").CurrentCamera local Inset = game:GetService("GuiService"):GetGuiInset().Y local RunService = game:GetService("RunService") local Mouse = game.Players.LocalPlayer:GetMouse() local LocalPlayer = game.Players.LocalPlayer local Line = Drawing.new("Line") local Circle = Drawing.new("Circle") local Plr = game.Players.LocalPlayer Mouse.KeyDown:Connect(function(KeyPressed) if KeyPressed == (Settings.AimLock.Aimlockkey) then if Settings.AimLock.Enabled == true then Settings.AimLock.Enabled = false if Settings.AimLock.Notifications == true then Plr = FindClosestPlayer() game.StarterGui:SetCore("SendNotification", { Title = "p", Text = "Unlocked" }) end else Plr = FindClosestPlayer() Settings.AimLock.Enabled = true if Settings.AimLock.Notifications == true then game.StarterGui:SetCore("SendNotification", { Title = "p", Text = "Locked On : " .. tostring(Plr.Character.Humanoid.DisplayName) }) end end end end) function FindClosestPlayer() local ClosestDistance, ClosestPlayer = math.huge, nil; for _, Player in next, game:GetService("Players"):GetPlayers() do if Player ~= LocalPlayer then local Character = Player.Character if Character and Character.Humanoid.Health > 1 then local Position, IsVisibleOnViewPort = CurrentCamera:WorldToViewportPoint(Character.HumanoidRootPart .Position) if IsVisibleOnViewPort then local Distance = (Vector2.new(Mouse.X, Mouse.Y) - Vector2.new(Position.X, Position.Y)).Magnitude if Distance < ClosestDistance then ClosestPlayer = Player ClosestDistance = Distance end end end end end return ClosestPlayer, ClosestDistance end RunService.Heartbeat:connect(function() if Settings.AimLock.Enabled == true then local Vector = CurrentCamera:WorldToViewportPoint(Plr.Character[Settings.AimLock.Aimpart].Position + (Plr.Character[Settings.AimLock.Aimpart].Velocity * Settings.AimLock.Prediction)) Line.Color = Settings.Settings.Color Line.Transparency = Settings.Settings .Transparency Line.Thickness = Settings.Settings .Thickness Line.From = Vector2.new(Mouse.X, Mouse.Y + Inset) Line.To = Vector2.new(Vector.X, Vector.Y) Line.Visible = true Circle.Position = Vector2.new(Mouse.X, Mouse.Y + Inset) Circle.Visible = Settings.Settings.FOV Circle.Thickness = 1.5 Circle.Thickness = 2 Circle.Radius = 60 Circle.Color = Settings.Settings.Color elseif Settings.AimLock.FOV == true then Circle.Visible = true else Circle.Visible = false Line.Visible = false end end) local mt = getrawmetatable(game) local old = mt.__namecall setreadonly(mt, false) mt.__namecall = newcclosure(function(...) local args = {...} if Settings.AimLock.Enabled and getnamecallmethod() == "FireServer" and args[2] == "MousePos" then args[3] = Plr.Character[Settings.AimLock.Aimpart].Position + (Plr.Character[Settings.AimLock.Aimpart].Velocity * Settings.AimLock.Prediction) return old(unpack(args)) end return old(...) end)
   	end    
+})
+Other:AddButton({
+	Name = "Best Resolver V2",
+	Callback = function()
+local RunService = game:GetService("RunService")
+
+local function zeroOutYVelocity(hrp)
+    hrp.Velocity = Vector3.new(hrp.Velocity.X, 0, hrp.Velocity.Z)
+    hrp.AssemblyLinearVelocity = Vector3.new(hrp.Velocity.X, 0, hrp.Velocity.Z)
+end
+
+local function onPlayerAdded(player)
+    player.CharacterAdded:Connect(function(character)
+        local hrp = character:WaitForChild("HumanoidRootPart")
+        zeroOutYVelocity(hrp)
+    end)
+end
+
+local function onPlayerRemoving(player)
+    player.CharacterAdded:Disconnect()
+end
+
+game.Players.PlayerAdded:Connect(onPlayerAdded)
+game.Players.PlayerRemoving:Connect(onPlayerRemoving)
+
+RunService.Heartbeat:Connect(function()
+    pcall(function()
+        for i, player in pairs(game.Players:GetChildren()) do
+            if player.Name ~= game.Players.LocalPlayer.Name then
+                local hrp = player.Character.HumanoidRootPart
+                zeroOutYVelocity(hrp)
+            end
+        end
+    end)
+end)
+		end    
 })
 Other:AddButton({
 	Name = "HOOD CUSTOMS",
